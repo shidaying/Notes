@@ -1,0 +1,73 @@
+### 1.下载安装 PackageControl
+
+View-Show Console(快捷键 command+shift+p)
+```
+    import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+```
+
+官网安装
+```
+[官网](https://packagecontrol.io/installation#st3)
+```
+### 2.下载Markdown Edting
+command+shift+p -> Install Package -> Markdown Edting
+等待一段时间会有弹出框提示需要重启,重启 Sublime
+### 3.下载Markdown Preview
+command+shift+p -> Install Package -> Markdown Preview
+等待一段时间会有弹出框提示需要重启,重启 Sublime
+
+设置快捷键
+Preference->Key Bindings-> Markdown Preview -> Settings-User 
+
+```
+[
+    {"keys": ["alt+m"], "command": "markdown_preview", "args": { "target": "browser"}}
+]
+```
+
+Preference -> Package Settings -> Markdown Preview -> Settings User 
+```
+{
+    {
+    "enable_highlight": true,
+    "enable_mathjax": true
+}
+}
+
+```
+
+### 4.下载 Auto Save
+command+shift+p -> Install Package -> Auto Save
+等待一段时间会有弹出框提示需要重启,重启 Sublime
+Preference -> Package Settings -> Auto Save -> Settings User 
+```
+{"auto_save_delay_in_seconds": 0.15}
+```
+
+
+### 5.下载 LiveReload
+command+shift+p ->Install Package -> LiveReload
+等待一段时间会有弹出框提示,重启 Sublime
+Preference -> Package Settings -> LiveReload -> Settings Default
+
+```
+"enabled_plugins": [
+        "SimpleReloadPlugin",
+        "SimpleRefresh"
+    ]
+```
+
+### 一些配置
+preferences -> Settings User 在中括号中添加如下键值对
+ #### 自动补全
+```
+"auto_complete": true,
+"auto_match_enabled": true
+```
+### 自动保存
+```
+"save_on_focus_lost": true
+```
+
+
+
